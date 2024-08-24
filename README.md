@@ -13,6 +13,7 @@ The primary objective of this project was to enhance the NeuroGPT codebase, a fr
 - **DistilledGPT Architecture**: Integration of a lightweight variant of GPT-2 for reduced computational load and faster training.
 - **DeepLIFT Implementation**: Added to improve model interpretability by identifying which EEG channels contributed most to the model's decisions.
 - **Early Stopping Callback**: Implemented to prevent overfitting by halting training when performance improvements stagnate.
+- **LOOCV and Kfold Cross Validaiton**: Implemented for proper and flexible cross validation of the model.  
 
 ## How to Use
 
@@ -32,7 +33,7 @@ To set up the project locally, follow these steps:
 3. **Run the Model**:
     
 ```
-bash torchrun --nproc_per_node=<num_gpu> src/train_gpt.py --training-type=epoch --num-epochs=25 --log-every-n-steps=10000 --per-device-training-batch-size=8 --per-device-validation-batch-size=8 --num-workers=0 --num_chunks=2 --chunk_len=500 --chunk_ovlp=100 --num-hidden-layers=6 --num-encoder-layers=6 --training-style='CSM_causal' --embedding-dim=1024 --data=EEG --num_channels=20 --train-data-path='' --fp16=True --sub_list='sub_list.csv' --architecture=DistilledGPT2 --no_evaluation=True
+torchrun --nproc_per_node=<num_gpu> src/train_gpt.py --training-type=epoch --num-epochs=25 --log-every-n-steps=10000 --per-device-training-batch-size=8 --per-device-validation-batch-size=8 --num-workers=0 --num_chunks=2 --chunk_len=500 --chunk_ovlp=100 --num-hidden-layers=6 --num-encoder-layers=6 --training-style='CSM_causal' --embedding-dim=1024 --data=EEG --num_channels=20 --train-data-path='' --fp16=True --sub_list='sub_list.csv' --architecture=DistilledGPT2 --no_evaluation=True
 ```
 
 ### Command-Line Arguments
