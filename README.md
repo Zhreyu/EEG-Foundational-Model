@@ -38,7 +38,7 @@ torchrun --nproc_per_node=<num_gpu> src/train_gpt.py --training-type=epoch --num
 
 ### Command-Line Arguments
 
-- `--data`: Type of data to use. Options are `EEG` (default) or `IEEG`.
+- `--data`: Type of data to use. Options are `EEG` (default) or `EEG2`.
 - `--architecture`: Select the architecture to use. Options include `GPT`, `PretrainedGPT2`, and `DistilledGPT2`.
 - `--kfold`: Set to `false` for regular training, `0` for LOOCV, or any integer for k-fold cross-validation.
 - `--training-type`: Specify the training type. Options are `steps` (default) or `epoch`.
