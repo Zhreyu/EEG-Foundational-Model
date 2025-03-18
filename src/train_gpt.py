@@ -69,7 +69,7 @@ def init_distributed_mode():
     else:
         print('Not using distributed mode')
 
-from utils import cv_split_bci, read_threshold_sub, load_data_EEG2, EarlyStoppingCallback
+from utils import cv_split_bci, read_threshold_sub, load_data_eeg2, EarlyStoppingCallback
 script_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert(0, os.path.join(script_path, '../'))
 # from batcher.make import make_batcher
